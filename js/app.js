@@ -31,6 +31,7 @@ class UI {
       this.showBalance();
     }
   }
+
   //show balance
   showBalance() {
     const expense = this.totalExpense();
@@ -47,6 +48,7 @@ class UI {
       this.balance.classList.add('showBlack');
     }
   }
+
   //total expense
   totalExpense() {
     let total = 0;
@@ -88,6 +90,7 @@ class UI {
       this.showBalance();
     }
   }
+
   addExpense(expense) {
     const div = document.createElement('div');
     div.classList.add('expense');
@@ -157,25 +160,21 @@ function eventListeners() {
   const expenseList = document.getElementById('expense-list');
 
   //new instance of UI
-
   const ui = new UI();
 
   //budget form submit
-
   budgetForm.addEventListener('submit', function(event) {
     event.preventDefault();
     ui.submitBudgetForm();
   });
 
   //expense form submit
-
   expenseForm.addEventListener('submit', function(event) {
     event.preventDefault();
     ui.submitExpenseForm();
   });
 
   //expense click
-
   expenseList.addEventListener('click', function(event) {
     if (event.target.parentElement.classList.contains('edit-icon')) {
       ui.editExpense(event.target.parentElement);
@@ -185,6 +184,7 @@ function eventListeners() {
   });
 }
 
+// when page is loaded
 document.addEventListener('DOMContentLoaded', function() {
   eventListeners();
 });
